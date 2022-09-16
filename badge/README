@@ -1,0 +1,32 @@
+Deploy
+
+    1. Inicie o ganache
+    2. Execute npm run migrate:{environment}
+    3*. Execute npm run verify:{environment} (menos em dev)
+    4. Publique o NFT e o JSON
+      4.1 Envie o NFT para o piñata com a nomenclatura {id}.png
+      4. Execute npm run metadata
+    5. Execute npm run mint:{environment}
+
+Tests
+    1. Inicie o ganache
+    2. Execute npm run migrate:{environment}
+    3. Execute npm run test:{environment}
+
+Perguntas frequentes:
+
+    Onde estão os parâmetros do meu construtor quando publico meu token?
+        Na pasta migrations
+
+    Onde está o address owner do meu token quando publico ele na testnet ou mainnet?
+      a account[0] corresponde a account da privatekey especificada no ".env" e vinculada no "truffle.config" a network correspondente
+
+    Como publico outro NFT?
+        1. Basta adicionar no arquivo nft.json
+        2. Rodar o script create-metadata
+        3. Publicar o arquivo json gerado na pasta metadata dentro da pasta do piñata
+        4. Publicar a foto do nft no piñata
+        5. Rodar o script mint nft
+
+    Em qual pasta do piñata devo publicar o json / foto do nft?
+      O código das pastas está no ".env" nos parametros IPFS_JSON_KEY e IPFS_NFT_KEY respectivamente

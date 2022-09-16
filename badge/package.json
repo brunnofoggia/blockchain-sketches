@@ -1,0 +1,27 @@
+{
+    "name": "token",
+    "scripts": {
+        "migrate:dev": "npx truffle migrate --reset",
+        "migrate:test": "npx truffle migrate --network rinkeby",
+        "migrate:live": "npx truffle migrate --network live",
+        "verify:test": "npx truffle run verify Token --network rinkeby",
+        "verify:live": "npx truffle run verify Token --network live",
+        "metadata": "node --es-module-specifier-resolution=node scripts/1-create-metadata.mjs",
+        "mint:dev": "truffle exec scripts/2-mint-nft.js",
+        "mint:test": "truffle exec scripts/2-mint-nft.js --network rinkeby",
+        "test:dev": "truffle test"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.4.2",
+        "@openzeppelin/contracts-upgradeable": "^4.4.2",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "@openzeppelin/test-helpers": "^0.5.15",
+        "@truffle/hdwallet-provider": "^2.0.3",
+        "dotenv": "^16.0.0",
+        "nodemon": "^2.0.16",
+        "truffle": "^5.4.32",
+        "truffle-plugin-verify": "^0.5.21"
+    }
+}
